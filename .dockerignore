@@ -12,6 +12,8 @@ tmp
 public/packs
 node_modules
 vendor/bundle
+enterprise
+spec/enterprise
 .DS_Store
 *.swp
 *~

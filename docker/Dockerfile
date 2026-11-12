@@ -86,8 +86,8 @@ RUN if [ "$RAILS_ENV" = "production" ]; then \
   && rm -rf spec node_modules tmp/cache; \
   fi
 
-# Generate .git_sha file with current commit hash
-RUN git rev-parse HEAD > /app/.git_sha
+# Git worktrees can be built without their parent repository metadata in the context.
+RUN git rev-parse HEAD 2>/dev/null > /app/.git_sha || printf 'unknown\n' > /app/.git_sha
 
 # Remove unnecessary files
 RUN rm -rf /gems/ruby/3.4.0/cache/*.gem \
@@ -119,6 +119,8 @@ ENV BUNDLE_FORCE_RUBY_PLATFORM ${BUNDLE_FORCE_RUBY_PLATFORM}
 ARG RAILS_ENV=production
 ENV RAILS_ENV ${RAILS_ENV}
 ENV BUNDLE_PATH="/gems"
+ENV CW_EDITION="ce"
+ENV DISABLE_ENTERPRISE="true"
 
 RUN apk update && apk add --no-cache \
   build-base \
