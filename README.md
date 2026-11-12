@@ -3,6 +3,14 @@
 
 ___
 
+# Zooblin Connect
+
+Zooblin Connect is Zooblin's white-label customer service product, based on Chatwoot Community Edition. Voice calling is planned as an independent integration and is not available in this fork yet. See [the product and architecture notes](docs/zooblin-connect.md) for scope, deployment boundaries, and release gates. The original Chatwoot copyright and MIT license remain in [LICENSE](LICENSE).
+
+## Upstream project
+
+The content below is upstream Chatwoot documentation. Some features described there require a paid Chatwoot plan and are not part of Zooblin Connect Community Edition.
+
 # Chatwoot
 
 The modern customer support platform, an open-source alternative to Intercom, Zendesk, Salesforce Service Cloud etc.
